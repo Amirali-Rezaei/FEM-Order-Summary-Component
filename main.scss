@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+$paleBlue: #e0e8ff;
+$brightBlue: #3829e0;
+$veryPaleBlue: hsl(225, 100%, 98%);
+$desaturatedBlue: hsl(224, 23%, 55%);
+$darkBlue: hsl(223, 47%, 23%);
+
+* {
+  font-family: "Red Hat Display", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: 16px;
+}
+
+body {
+  background-image: url("/images/pattern-background-desktop.svg");
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderSummary {
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  background-color: #fff;
+  padding-bottom: 30px;
+  box-shadow: 0px 20px 40px $desaturatedBlue;
+
+  img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+  }
+
+  .content {
+    padding: 0 50px;
+    height: 100%;
+    margin-top: 30px;
+
+    h1 {
+      color: $darkBlue;
+    }
+
+    p {
+      color: $desaturatedBlue;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 0px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background-color: $brightBlue;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      box-shadow: 0px 10px 30px $desaturatedBlue;
+      cursor: pointer;
+      transition: all ease 0.3s;
+
+      &:hover {
+        box-shadow: 0px 0px 15px $desaturatedBlue;
+      }
+    }
+    span.cancelOrder {
+      display: block;
+      margin-top: 40px;
+      color: $desaturatedBlue;
+      font-weight: 700;
+    }
+  }
+
+  .plan {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 70px;
+    background-color: $veryPaleBlue;
+    text-align: left;
+    padding: 5px 15px;
+
+    img {
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+    }
+
+    .cusPlan {
+      h4 {
+        color: $darkBlue;
+      }
+      span {
+        color: $desaturatedBlue;
+      }
+    }
+
+    .changePlan {
+      display: flex;
+      justify-content: end;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    background-image: url("/images/pattern-background-mobile.svg");
+  }
+
+  .orderSummary {
+    width: 300px;
+
+    .content {
+      margin-top: 15px;
+      padding: 0 25px;
+
+      h1 {
+        font-size: 25px;
+      }
+
+      p {
+        margin-top: 10px;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      button{
+        box-shadow: 0px 10px 20px $desaturatedBlue;
+      }
+
+      span.cancelOrder{
+        font-size: 15px;
+        margin-top: 25px;
+      }
+    }
+    .plan {
+      .cusPlan {
+        h4 {
+          font-size: 15px;
+        }
+
+        span {
+          font-size: 15px;
+        }
+      }
+      .changePlan {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
